@@ -47,6 +47,8 @@ export class GoogleSigninComponent {
     google.accounts.id.initialize({
       client_id: '962727660630-516lnj2ijld1rv15p0vl5flfibp7leo4.apps.googleusercontent.com',
       callback: (res: any) =>{
+        console.log('res',res);
+
         this.googleLoginService.loginWithGoogle(res);
       }
     });
