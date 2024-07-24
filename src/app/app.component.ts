@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'GoogleLogin';
+  constructor(private titleService: Title) {
+    this.titleService.setTitle(this.title);
+   }
 }

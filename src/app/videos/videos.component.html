@@ -1,0 +1,26 @@
+<div class="pt-24 pb-0 px-4">
+  <p>videos works!</p>
+  <!-- <video id="video" width="640" height="360" controls></video> -->
+  <!-- <button (click)="playVideo()">Play Video</button> -->
+  <div class="flex justify-self-center px-4">
+    <!-- <video [src]="video['sources']['0']"controls"></video> -->
+  <!-- @for(video of videoData; track i; let i= $index ){ -->
+    <ng-container *ngFor="let video of videoData;" >
+      @defer{
+          <ng-container class="inline-grid">
+          <video width="100%" height="auto" controls preload="auto" [poster]="">
+            <source [src]="video['sources']['0']">
+          </video>
+          <h5 class="items-center">{{video?.title}}</h5>
+        </ng-container>
+        }
+
+
+    </ng-container>
+
+    <!-- }
+    @empty{
+      <div class="">No Data Found</div>
+    } -->
+  </div>
+</div>
